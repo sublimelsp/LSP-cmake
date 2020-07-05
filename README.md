@@ -1,7 +1,7 @@
 # LSP-cmake
 
 This is a helper package that automatically installs and updates a
-[CMake Language Server](https://github.com/muffinmad/cmake-language-server) for you.
+[CMake Language Server](https://github.com/regen100/cmake-language-server) for you.
 
 To use this package, you must have the [LSP](https://packagecontrol.io/packages/LSP) package installed as well.
 
