@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Preferences: LSP-cmake Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/LSP-cmake/LSP-cmake.sublime-settings",
+            "default": "// Settings in here override those in \"LSP-cmake/LSP-cmake.sublime-settings\"\n{\n\t$0\n}\n"
+        }
+    }
+]

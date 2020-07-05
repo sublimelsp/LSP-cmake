@@ -1,0 +1,14 @@
+{
+	"command": [
+		"$cache_path/LSP-cmake/bin/cmake-language-server"
+	],
+	"initializationOptions": {
+		"buildDirectory": "$folder/build"
+	},
+	"version": "0.1.2",
+	"languages": [
+		{
+			"languageId": "cmake"
+		}
+	]
+}
