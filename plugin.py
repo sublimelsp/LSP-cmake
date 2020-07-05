@@ -5,7 +5,7 @@ import re
 
 import sublime
 from LSP.plugin import AbstractPlugin
-from LSP.plugin.core.typing import Any, Dict, Optional
+from LSP.plugin.core.typing import Any
 
 
 class Cmake(AbstractPlugin):
@@ -23,7 +23,7 @@ class Cmake(AbstractPlugin):
 
     @classmethod
     def server_exe(cls) -> str:
-        return os.path.join(cls.bindir(), "cmakels")
+        return os.path.join(cls.bindir(), "cmake-language-server")
 
     @classmethod
     def pip_exe(cls) -> str:
