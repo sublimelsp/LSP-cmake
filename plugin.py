@@ -5,7 +5,7 @@ import re
 
 import sublime
 from LSP.plugin import AbstractPlugin
-from LSP.plugin.core.typing import Any
+from LSP.plugin.core.typing import Any, Dict
 
 
 class Cmake(AbstractPlugin):
@@ -15,11 +15,12 @@ class Cmake(AbstractPlugin):
 
     @classmethod
     def basedir(cls) -> str:
-        return os.path.join(sublime.cache_path(), "LSP-cmake")
+        return os.path.join(cls.storage_path(), "LSP-cmake")
 
     @classmethod
     def bindir(cls) -> str:
-        return os.path.join(cls.basedir(), "bin")
+        dirname = "scripts" if sublime.platform() == "windows" else "bin"
+        return os.path.join(cls.basedir(), dirname)
 
     @classmethod
     def server_exe(cls) -> str:
@@ -63,9 +64,15 @@ class Cmake(AbstractPlugin):
         shutil.rmtree(cls.basedir(), ignore_errors=True)
         try:
             os.makedirs(cls.basedir(), exist_ok=True)
-            cls.run(cls.python_exe(), "-m", "venv", "LSP-cmake", cwd=sublime.cache_path())
+            cls.run(cls.python_exe(), "-m", "venv", "LSP-cmake", cwd=cls.storage_path())
             cmake = "cmake-language-server=={}".format(cls.version_str())
-            cls.run(cls.pip_exe(), "install", cmake)
+            cls.run(cls.pip_exe(), "install", "--disable-pip-version-check", cmake)
         except Exception:
             shutil.rmtree(cls.basedir(), ignore_errors=True)
             raise
+
+    @classmethod
+    def additional_variables(cls) -> Dict[str, str]:
+        return {
+            'server_binary': cls.server_exe()
+        }

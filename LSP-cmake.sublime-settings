@@ -1,6 +1,6 @@
 {
 	"command": [
-		"$cache_path/LSP-cmake/bin/cmake-language-server"
+		"$server_binary"
 	],
 	"initializationOptions": {
 		"buildDirectory": "$folder/build"
