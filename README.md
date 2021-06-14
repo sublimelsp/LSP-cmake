@@ -7,6 +7,7 @@ This is a helper package that automatically installs and updates a [CMake Langua
 * Install [LSP](https://packagecontrol.io/packages/LSP)
 * Install [CMake](https://packagecontrol.io/packages/CMake) package to enable support for CMake syntax.
 * Install [LSP-CMake](https://packagecontrol.io/packages/LSP-CMake)
+* Make sure that `cmake` is in the `PATH` and Sublime Text can find it.
 * Restart Sublime.
 
 ## Applicable Selectors
