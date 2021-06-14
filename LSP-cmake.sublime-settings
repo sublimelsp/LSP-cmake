@@ -1,14 +1,18 @@
 {
 	"command": [
-		"$server_binary"
+		"$server_path"
 	],
 	"initializationOptions": {
 		"buildDirectory": "$folder/build"
 	},
-	"version": "0.1.2",
+	// ST4
+	"selector": "source.cmake",
+	// ST3
 	"languages": [
 		{
-			"languageId": "cmake"
+			"languageId": "cmake",
+			"scopes": ["source.cmake"],
+			"syntaxes": ["Packages/CMake/CMake.sublime-syntax"],
 		}
-	]
+	],
 }
