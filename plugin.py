@@ -1,7 +1,4 @@
-from LSP.plugin.core.typing import Dict
 from lsp_utils.pip_client_handler import PipClientHandler
-import os
-import sublime
 
 
 class Cmake(PipClientHandler):
