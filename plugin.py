@@ -19,7 +19,7 @@ class Cmake(AbstractPlugin):
 
     @classmethod
     def bindir(cls) -> str:
-        dirname = "scripts" if sublime.platform() == "windows" else "bin"
+        dirname = "Scripts" if sublime.platform() == "windows" else "bin"
         return os.path.join(cls.basedir(), dirname)
 
     @classmethod
