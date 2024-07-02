@@ -5,14 +5,5 @@
 	"initializationOptions": {
 		"buildDirectory": "$folder/build"
 	},
-	// ST4
-	"selector": "source.cmake",
-	// ST3
-	"languages": [
-		{
-			"languageId": "cmake",
-			"scopes": ["source.cmake"],
-			"syntaxes": ["Packages/CMake/CMake.sublime-syntax"],
-		}
-	],
+	"selector": "source.cmake"
 }
