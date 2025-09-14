@@ -1,1 +1,1 @@
-cmake-language-server==0.1.2
+cmake-language-server==0.1.11
