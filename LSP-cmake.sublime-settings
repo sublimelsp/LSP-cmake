@@ -2,7 +2,7 @@
 	"command": [
 		"$server_path"
 	],
-	"initializationOptions": {
+	"initialization_options": {
 		"buildDirectory": "$folder/build"
 	},
 	"selector": "source.cmake"
