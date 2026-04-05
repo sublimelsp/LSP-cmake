@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from lsp_utils.pip_client_handler import PipClientHandler
 
 
