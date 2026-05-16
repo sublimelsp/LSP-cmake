@@ -1,21 +1,25 @@
 from __future__ import annotations
 
-from lsp_utils.pip_client_handler import PipClientHandler
+from LSP.plugin import LspPlugin
+from LSP.plugin import OnPreStartContext
+from lsp_utils import UvVenvManager
+from sublime_lib import ResourcePath
+from typing_extensions import override
 
 
-class Cmake(PipClientHandler):
-    package_name = __package__
-    requirements_txt_path = "requirements.txt"
-    server_filename = "cmake-language-server"
+class Cmake(LspPlugin):
 
     @classmethod
-    def get_displayed_name(cls) -> str:
-        return "cmake"
+    @override
+    def on_pre_start_async(cls, context: OnPreStartContext) -> None:
+        package_name = cls.plugin_storage_path.name
+        UvVenvManager.on_pre_start_async(
+            context, cls.plugin_storage_path, ResourcePath('Packages', package_name, 'server'), 'cmake-language-server')
 
 
 def plugin_loaded() -> None:
-    Cmake.setup()
+    Cmake.register()
 
 
 def plugin_unloaded() -> None:
-    Cmake.cleanup()
+    Cmake.unregister()
