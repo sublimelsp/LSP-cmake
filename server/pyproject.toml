@@ -3,5 +3,5 @@ name = "lsp-cmake"
 version = "1.0"
 dependencies = [
     "cmake-language-server>=0.1.11",
-    "pygls>=1.0,<2.0",
+    "pygls>=2.1,<2.2",
 ]
